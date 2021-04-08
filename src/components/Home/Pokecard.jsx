@@ -19,8 +19,11 @@ export default function Pokecard() {
 	let { poketypes } = content;
 	let imagebg;
 	switch (poketypes && poketypes[0]) {
+		case "fire":
+			imagebg = "fire.jpg";
+			break;
 		case "dark":
-			imagebg = "dark.jpg";
+			imagebg = "dark.webp";
 			break;
 		case "ghost":
 			imagebg = "ghost.jpg";
@@ -101,7 +104,7 @@ export default function Pokecard() {
 				<h5>BE {base_experience}</h5>
 				<div className="pokecard-detail flex flex-jc-sb flex-ai-c">
 					<div className="pokecard-detail-child">
-						<i class="fas fa-weight"></i>
+						<i className="fas fa-weight"></i>
 						<p>
 							{weight}
 							<span> lb</span>
@@ -111,14 +114,14 @@ export default function Pokecard() {
 					{poketypes && poketypes.map((type, index) => {
 						return (
 							<div key={index}>
-								<i class="fab fa-gg-circle"></i>
+								<i className="fab fa-gg-circle"></i>
 								<p>{type}</p>
 							</div>
 						);
 					})}
 
 					<div className="pokecard-detail-child">
-						<i class="fas fa-text-height"></i>
+						<i className="fas fa-text-height"></i>
 						<p>
 							{height}
 							<span> dm</span>
