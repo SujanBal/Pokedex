@@ -1,0 +1,142 @@
+.pokecard {
+	// opacity: 0;
+	position: fixed;
+	z-index: 1000;
+	text-align: center;
+	max-width: 27rem;
+	top: 50%;
+	left: 50%;
+	border: 10px solid rgb(247, 95, 7);
+	border-radius: 20px;
+	transform: translate(-50%, -50%) scale(0);
+	background-color: #fff;
+	transition: transform 700ms ease-in-out;
+
+	&.show {
+		z-index: 1000;
+		transform: translate(-50%, -50%) scale(1) rotateY(360deg);
+		// opacity: 1;
+	}
+	// transform: translateY(-50%);
+	&-image {
+		// height: 20%;
+		position: relative;
+		margin-bottom: 2rem;
+		&-background {
+			width: 25rem;
+			border-top-left-radius: 10px;
+			border-top-right-radius: 10px;
+			height: 12rem;
+		}
+		&-main {
+			z-index: 100;
+			position: absolute;
+			bottom: -30%;
+			left: 25%;
+			width: 15rem;
+		}
+		p {
+			position: absolute;
+			top: 5%;
+			left: 5%;
+			font-size: 2rem;
+			color: #fff;
+		}
+		i {
+			position: absolute;
+			top: 5%;
+			right: 5%;
+			font-size: 3rem;
+			font-weight: 400;
+			cursor: pointer;
+			color: #fff;
+		}
+	}
+	h1 {
+		font-size: 2rem;
+		color: Black;
+		text-transform: capitalize;
+		font-weight: 400;
+	}
+	h5 {
+		font-weight: 400;
+		position: relative;
+		font-size: 1.3rem;
+		margin-top: 1rem;
+		&::after {
+			content: "";
+			position: absolute;
+			top: 130%;
+			left: 50%;
+			transform: translateX(-50%);
+			border-radius: 50%;
+			height: 2px;
+			width: 60%;
+			background-color: green;
+		}
+	}
+	&-detail {
+		width: 80%;
+		margin: 0 auto;
+		padding-top: 2.5rem;
+		i {
+			font-size: 2.4rem;
+			margin-bottom: 0.5rem;
+		}
+		p {
+			font-size: 1.4rem;
+			text-transform: capitalize;
+			// margin-right: 1rem;
+
+			span {
+				font-size: 1.2rem;
+				text-transform: none;
+			}
+		}
+	}
+	&-abilities {
+		margin: 2rem;
+		div {
+			flex-wrap: wrap;
+		}
+		h4 {
+			font-weight: 500;
+			font-size: 1.4rem;
+			text-transform: uppercase;
+			margin-bottom: 1rem;
+		}
+		p {
+			font-size: 1.4rem;
+			text-transform: capitalize;
+			&.slash {
+				&:not(:last-child) {
+					&::after {
+						content: "/";
+					}
+				}
+			}
+		}
+	}
+	&-stats {
+		margin: 2rem 1rem;
+		margin-bottom: 1rem;
+		h4 {
+			font-weight: 500;
+			font-size: 1.4rem;
+			text-transform: uppercase;
+			margin-bottom: 1rem;
+		}
+		p {
+			font-size: 1.4rem;
+			text-transform: capitalize;
+		}
+	}
+	label {
+		margin-right: 1rem;
+	}
+	meter {
+		// border-radius: 5px;
+		height: 1rem;
+		flex: 1;
+	}
+}

@@ -21,10 +21,10 @@ function App() {
                 pokemons = await response.json()
     
                 const { id, name, abilities, base_experience, height, weight, types, stats } = pokemons
-                const pokeabilities = [abilities.map(i => {
+                const pokeabilities = abilities.map(i => {
                     const { ability } = i
                     return ability.name
-                })]
+                })
 				
 				let padToThree = (id) => {
 					if (id <= 999) {
@@ -33,14 +33,14 @@ function App() {
 					return id
 				}
 				const image=`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${padToThree(id)}.png`
-                const poketypes = [types.map(i => {
+                const poketypes = types.map(i => {
                     const { type } = i;
                     return type.name
-                })]
-                const pokestats = [stats.map(i => {
+                })
+                const pokestats = stats.map(i => {
                     const { base_stat, stat } = i;
                     return { base_stat: base_stat, stat: stat.name }
-                })]
+                })
                 const pokemonDetails = { id:padToThree(id), name, height, weight, base_experience, image, poketypes, pokeabilities, pokestats }
     
               
@@ -53,7 +53,8 @@ function App() {
         fetchdata()
             
        
-    },[dispatch, loading.times])
+    }, [dispatch, loading.times])
+    
 
 	return (
 	

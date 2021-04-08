@@ -22,7 +22,7 @@ export default function PokemonList() {
                     {pokemonList.map((pokemon) => {
                         const { id, name, image, poketypes } = pokemon;
                         return <div key={id} className='pokemon'>
-                            <div className="pokemon-image">
+                            <div className="pokemon-image" onClick={() => { dispatch({ type: 'showPokecard', payload: pokemon }) }}>
                                 <div className="pokemon-image-text flex flex-jc-c flex-ai-c">
                                     <h1>View Detail</h1>
                                 </div>
