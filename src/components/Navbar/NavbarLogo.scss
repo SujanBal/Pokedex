@@ -1,0 +1,193 @@
+@import "../../index.scss";
+
+.navbar-top {
+	background: #f5f5f5;
+	box-shadow: 0 0 5px #000;
+	// padding: 1rem 0;
+	&-logo {
+		flex: 1;
+		box-shadow: 0 0 5px #000;
+		padding: 1rem;
+		margin-right: 1rem;
+		img {
+			width: 15rem;
+		}
+	}
+	&-animate {
+		// border-bottom: 3px solid red;
+		flex: 11;
+		height: 70px;
+		position: relative;
+		// z-index: 1;
+		&-background {
+			flex: 1;
+			height: 100%;
+			margin-right: 1rem;
+			position: relative;
+			&::before {
+				content: "";
+				// z-index: 100;
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;
+				background-color: rgba($color: #000000, $alpha: 0.6);
+			}
+		}
+		.background1 {
+			background: url(./background2.png) center/cover no-repeat;
+		}
+		.background2 {
+			background: url(./background5.png) center/cover no-repeat;
+		}
+		.background3 {
+			background: url(./background1.jpg) center/cover no-repeat;
+		}
+
+		img {
+			width: 4rem;
+		}
+		img:last-child {
+			width: 5rem;
+		}
+		&-ball {
+			position: absolute;
+			z-index: 200;
+			animation: animateball;
+			animation-duration: 10s;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+			transition: transform 1s ease-in-out;
+		}
+
+		&-pikachu {
+			position: absolute;
+			z-index: 200;
+			left: 70%;
+			bottom: 0;
+			animation: openpikachu;
+			animation-duration: 10s;
+			transform: scale(0);
+			animation-timing-function: ease-in-out;
+			animation-iteration-count: infinite;
+		}
+	}
+}
+
+@keyframes animateball {
+	0% {
+		bottom: 30%;
+		left: 0%;
+		transform: rotate(180deg);
+	}
+
+	5% {
+		transform: rotate(360deg);
+		bottom: 0%;
+		left: 10%;
+	}
+	10% {
+		transform: rotate(300deg);
+		left: 20%;
+	}
+	15% {
+		transform: rotate(700deg);
+		left: 30%;
+	}
+	20% {
+		transform: rotate(880deg);
+		left: 40%;
+	}
+	25% {
+		transform: rotate(1060deg);
+		left: 50%;
+	}
+	30% {
+		transform: rotate(1240deg);
+		left: 60%;
+	}
+	35% {
+		transform: rotate(1445deg);
+		left: 70%;
+	}
+	50% {
+		transform: rotate(1415deg);
+		left: 70%;
+	}
+	53% {
+		transform: rotate(1475deg);
+		left: 70%;
+	}
+	56% {
+		transform: rotate(1415deg);
+		left: 70%;
+	}
+	59% {
+		transform: rotate(1475deg);
+		left: 70%;
+	}
+
+	60% {
+		transform: rotate(1445deg);
+		left: 70%;
+		transform: scale(1);
+	}
+	65% {
+		transform: rotate(1445deg);
+		left: 70%;
+		transform: scale(0);
+		transition: transform 1s ease-in-out;
+	}
+
+	100% {
+		left: 90%;
+		transform: scale(0);
+		bottom: 0;
+	}
+}
+@keyframes openpikachu {
+	0% {
+		transform: scale(0);
+	}
+	65% {
+		transform: scale(0);
+	}
+	70% {
+		transform: scale(1);
+	}
+
+	75% {
+		transform: rotate(30deg);
+	}
+	80% {
+		transform: rotate(-30deg);
+	}
+	85% {
+		transform: rotate(30deg);
+	}
+	90% {
+		transform: rotate(-30deg);
+	}
+	95% {
+		transform: rotate(30deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.navbar-top-animate {
+		&-ball {
+			display: none;
+		}
+		&-pikachu {
+			display: none;
+		}
+		.background2,
+		.background3 {
+			display: none;
+		}
+	}
+}

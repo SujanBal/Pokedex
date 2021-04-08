@@ -1,0 +1,40 @@
+$body-font: "Roboto", arial, sans-serif;
+$secondary-font: "Exo 2", sans-serif;
+
+$body-color: #464646;
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 10px;
+}
+
+body {
+	font-size: 1.6rem;
+	font-family: $body-font;
+	color: $body-color;
+}
+
+.container {
+	max-width: 95rem;
+	margin: auto;
+}
+
+.flex {
+	display: flex;
+
+	&-jc-sb {
+		justify-content: space-between;
+	}
+	&-jc-c {
+		justify-content: center;
+	}
+	&-ai-c {
+		align-items: center;
+	}
+}
