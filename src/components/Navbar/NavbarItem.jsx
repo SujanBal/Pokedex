@@ -10,6 +10,7 @@ import {useSelector, useDispatch} from 'react-redux'
 
 export default function NavbarItem() {
 	const navbar = useSelector(state => state.navbarReducer)
+	const searches = useSelector(state => state.searchReducer)
 	const dispatch = useDispatch()
 	return (
 		<nav className="navbar-bottom">
@@ -46,13 +47,14 @@ export default function NavbarItem() {
 					</NavLink>
 				</div>
 				<div className="blank">
-					<input placeholder='Search your pokemons' />
-					<select name="searchby" id="searchby">
+					<input value={searches.searchitem} onChange={(e)=>dispatch({type:'inputHandler', payload:e.target.value})} placeholder='Search your pokemons' />
+					<select value={searches.searchby} onChange={(e)=>dispatch({type:'selectHandler', payload:e.target.value})} name="searchby" id="searchby">
 						<option value="name">By Name</option>
 						<option value="gender">By Gender</option>
 						<option value="region">By Region</option>
 						<option value="habitat">By Habitat</option>
 					</select>
+
 				</div>
 			</div>
 		</nav>

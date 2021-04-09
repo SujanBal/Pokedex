@@ -5,7 +5,7 @@ export default function FooterComponent() {
 	return (
 		<footer className="copyright">
 			<div className="container">
-				<p>Copyright &copy; 2021 The Pokedex. All Rights Reserved.</p>
+				<p>Copyright &copy; 2021 The Pokedex.</p>
 				<p>
 					Terms of Use | Privacy Policy |
 					<span>

@@ -3,9 +3,8 @@ const pokemonListReducer = (state = [], action)=>{
         case 'addPokemons':
             if (state.id === action.payload.id) {
                return state
-           }
+            }
             return [...state, action.payload]
-        
         default:
             return state;
     }
