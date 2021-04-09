@@ -62,7 +62,7 @@ function App() {
         const fetchWithFilter = async () => {
             
             if (search.searchby === 'name') {
-                const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${search.searchitem}`)
+                const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${search.searchitem.toLowerCase()}`)
                 if (response.status >= 200 && response.status <= 299) {
                     const pokemons = await response.json();
 
@@ -149,6 +149,7 @@ function App() {
                 
             }
         }
+
         fetchWithFilter()
     }, [dispatch,search.searchitem, search.searchby])
     
